@@ -32,13 +32,14 @@ API Criada para intuito de aprendizado com a linguagem JavaScript utilizando Nod
   * ```json
     {
     "title": "Sample Game", 
-    "year": "This is a sample game.",
+    "year": "2012.",
     "price": "79.99",
     }
     ```
 
 * List all games
   * Endpoint: GET /games
+  * Authorization token must be set.
 
 * View Game Details:
    * Endpoint: GET /game/{id}
