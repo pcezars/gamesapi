@@ -13,7 +13,7 @@ router.get("/games", auth, (req, res) => {
 });
 
 
-router.get("/game/:id", (req, res) => {
+router.get("/game/:id", auth,(req, res) => {
     if(isNaN(req.params.id)){
         res.sendStatus(400);
     } else{
@@ -32,7 +32,7 @@ router.get("/game/:id", (req, res) => {
     }
 });
 
-router.post("/game", (req, res) => {
+router.post("/game", auth,(req, res) => {
     var {title, price, year} = req.body;
     
     Game.create({
@@ -44,7 +44,7 @@ router.post("/game", (req, res) => {
     res.sendStatus(200);
 });
 
-router.delete("/game/:id", (req, res) => {
+router.delete("/game/:id", auth,(req, res) => {
     if(isNaN(req.params.id)){
         res.sendStatus(400);
     } else{
@@ -57,7 +57,7 @@ router.delete("/game/:id", (req, res) => {
     }
 });
 
-router.put("/game/:id", (req, res) => {    
+router.put("/game/:id", auth,(req, res) => {    
     var {title, price, year} = req.body;
     
     if(isNaN(req.params.id)){
