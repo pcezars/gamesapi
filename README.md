@@ -1,5 +1,5 @@
 # API de Games
-API Criada para intuito de aprendizagem com a linguagem JavaScript utilizando Node.js
+API Criada para intuito de aprendizado com a linguagem JavaScript utilizando Node.js
 
 ## Endpoints
 
