@@ -3,43 +3,13 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
 const Game = require("./database/Game");
+const cors = require("cors");
 
-// connection
-//     .authenticate()
-//     .then(() => {
-//         console.log("Conexão feita com o banco de dados!");
-//     })
-//     .catch((msgErro) => {
-//         console.log(msgErro);
-//     });
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
-
-// var DB = {
-//     games: [
-//         {
-//             id: 23,
-//             title: "Call of Duty MW",
-//             year: 2019,
-//             price: 60
-//         },
-//         {
-//             id: 65,
-//             title: "Sea of Thieves",
-//             year: 2018,
-//             price: 40
-//         },
-//         {
-//             id: 2,
-//             title: "Minecraft",
-//             year: 2012,
-//             price: 20
-//         }
-//     ]
-// }
 
 app.get("/games", (req, res) => {    
     Game.findAll({raw: true})
